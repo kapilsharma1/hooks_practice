@@ -4,9 +4,41 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import CardDisplay from './CardDisplay'
+
+import UserComp from './UserComp'
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+
+import store from "./store";
+
+import {Provider} from "react-redux";
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+
+      <Switch >
+
+        <Route exact path="/">
+          <Provider store={store}>
+        <App></App>
+        </Provider>
+        </Route>
+
+        <Route exact path="/card">
+        <CardDisplay></CardDisplay>
+        {/* <h3>Hello</h3> */}
+        </Route>
+
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
