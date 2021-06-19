@@ -192,15 +192,10 @@ const App = () =>{
   function handleChange(e)
   {
    setInputValue(e.target.value);
-   
-   
+   localStorage.setItem("inp",inputVal);
   
   }
-  localStorage.setItem("inp",inputVal);
-
  
-
-
   return (<>
 
   <h1>{inputVal}</h1>
@@ -210,7 +205,7 @@ const App = () =>{
             type='text'
             onChange={handleChange}
             placeholder='Search'
-            value={localStorage.getItem("inp")}
+            value={inputVal}
           />
 </form>
   
